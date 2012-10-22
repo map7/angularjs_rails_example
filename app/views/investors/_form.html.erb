@@ -1,14 +1,15 @@
-<%= form_for(@investor) do |f| %>
+<div ng-controller="InvestorCtrl">
+  <%= form_for(@investor) do |f| %>
   <% if @investor.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@investor.errors.count, "error") %> prohibited this investor from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@investor.errors.count, "error") %> prohibited this investor from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @investor.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
@@ -17,7 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :total_cost %><br />
-    <%= f.number_field :total_cost %>
+    <%= f.number_field :total_cost, "ng-model" => "total_cost" %>
   </div>
   <div class="field">
     <%= f.label :total_value %><br />
@@ -26,4 +27,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>

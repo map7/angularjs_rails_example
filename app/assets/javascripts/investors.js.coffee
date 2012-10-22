@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ (event) ->
+  app = angular.module "investor", []
+
+  app.controller("InvestorCtrl", ["$scope", ($scope) ->
+    $scope.total_cost = 0
+  ])
+
+  angular.bootstrap document, ['investor']
