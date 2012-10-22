@@ -16,6 +16,23 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
+  <%= f.fields_for :houses do |builder| %>
+
+  <%= builder.label :address %>
+  <%= builder.text_field :address %>
+  
+  <%= builder.label :suburb %>
+  <%= builder.text_field :suburb %>
+  
+  <%= builder.label :cost %>
+  <%= builder.text_field :cost %>
+  
+  <%= builder.label :value %>
+  <%= builder.text_field :value %>
+  
+  <% end %>
+  
   <div class="field">
     <%= f.label :total_cost %><br />
     <%= f.number_field :total_cost, "ng-model" => "total_cost" %>
