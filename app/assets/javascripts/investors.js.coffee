@@ -8,14 +8,18 @@ $ (event) ->
       { cost: "1000000", value: "900000" },    
     ]
     $scope.calc_totals = ->
-      total = 0
+      # Initialise variables
+      cost = 0
+      value = 0
 
       # Go through each house and calculate the total cost
       for ts in $scope.houses
-        total = parseInt(total) + parseInt(ts.cost)
+        cost = parseInt(cost) + parseInt(ts.cost)
+        value = parseInt(value) + parseInt(ts.value)
 
       # Set the total
-      $scope.total_cost = total
+      $scope.total_cost = cost
+      $scope.total_value = value  
 
     # Run the calculation at the start  
     $scope.calc_totals()
