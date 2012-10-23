@@ -20,18 +20,7 @@
   <% i = 0 %>
   <%= f.fields_for :houses do |builder| %>
   <div class="field">
-	<%= builder.label :address %>
-	<%= builder.text_field :address %>
-	
-	<%= builder.label :suburb %>
-	<%= builder.text_field :suburb %>
-	
-	<%= builder.label :cost %>
-	<%= builder.text_field :cost, "ng-model" => "houses[#{i}].cost", "ng-change" => "calc_totals()" %>
-	
-	<%= builder.label :value %>
-	<%= builder.text_field :value, "ng-model" => "houses[#{i}].value", "ng-change" => "calc_totals()" %>
-
+	<%= render :partial => "house", :locals => {:f => builder, :i => i} %>
 	<% i = i + 1 %>
   </div>
   <% end %>
