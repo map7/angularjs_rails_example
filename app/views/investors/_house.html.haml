@@ -1,0 +1,10 @@
+= "index = #{i}"
+%br/
+= f.label :address
+= f.text_field :address
+= f.label :suburb
+= f.text_field :suburb
+= f.label :cost
+= f.text_field :cost, "ng-model" => "houses[#{i}].cost", "ng-change" => "calc_totals()"
+= f.label :value
+= f.text_field :value, "ng-model" => "houses[#{i}].value", "ng-change" => "calc_totals()"

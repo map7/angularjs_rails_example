@@ -1,0 +1,29 @@
+%div{"ng-controller" => "InvestorCtrl"}
+	= form_for(@investor) do |f|
+		- if @investor.errors.any?
+			#error_explanation
+				%h2
+					= pluralize(@investor.errors.count, "error")
+					prohibited this investor from being saved:
+				%ul
+					- @investor.errors.full_messages.each do |msg|
+						%li= msg
+		.field
+			= f.label :name
+			%br/
+			= f.text_field :name
+			
+		- i = 0
+		= f.fields_for :houses do |builder|
+			.field
+				= render :partial => "house", :locals => {:f => builder, :i => i}
+				- i = i + 1
+				
+		.field
+			= f.label :total_cost
+			= f.number_field :total_cost, "ng-model" => "total_cost"
+		.field
+			= f.label :total_value
+			= f.number_field :total_value, "ng-model" => "total_value"
+		.actions
+			= f.submit

@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @investor.name
+%p
+  %b Total cost:
+  = @investor.total_cost
+%p
+  %b Total value:
+  = @investor.total_value
+= link_to 'Edit', edit_investor_path(@investor)
+|
+\#{link_to 'Back', investors_path}
