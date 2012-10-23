@@ -10,8 +10,7 @@
 						%li= msg
 		.field
 			= f.label :name
-			%br/
-			= f.text_field :name
+			= f.text_field :name, "ng-model" => "name"
 			
 		- i = 0
 		= f.fields_for :houses do |builder|
