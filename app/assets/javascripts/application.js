@@ -9,9 +9,10 @@
 //
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
-//
+// 
+// It's best to put Angular before any other JS libraries.
+//= require angular
 //= require jquery
 //= require jquery_ujs
-//= require angular
 //= require_tree .
 
