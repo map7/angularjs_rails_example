@@ -38,3 +38,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "angularjs-rails"
+gem 'haml-rails'
