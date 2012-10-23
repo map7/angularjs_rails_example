@@ -27,10 +27,10 @@
 	<%= builder.text_field :suburb %>
 	
 	<%= builder.label :cost %>
-	<%= builder.text_field :cost, "ng-model" => "timesheets[#{i}].cost", "ng-change" => "calc_cost()" %>
+	<%= builder.text_field :cost, "ng-model" => "houses[#{i}].cost", "ng-change" => "calc_totals()" %>
 	
 	<%= builder.label :value %>
-	<%= builder.text_field :value, "ng-model" => "timesheets[#{i}].value" %>
+	<%= builder.text_field :value, "ng-model" => "houses[#{i}].value", "ng-change" => "calc_totals()" %>
 
 	<% i = i + 1 %>
   </div>
