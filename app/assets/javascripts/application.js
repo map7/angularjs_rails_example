@@ -12,6 +12,7 @@
 // 
 // It's best to put Angular before any other JS libraries.
 //= require angular
+//= require angular-resource
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
