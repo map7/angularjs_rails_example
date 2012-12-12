@@ -4,7 +4,8 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
   $scope.investor = {}
 
   $scope.create = (investor) ->
-    i = new Investor(investor)
+    console.log 'enter create function'
+    i = new Investors(investor)
     i.$create( (investor) ->
       $location.path('/investors/' + investor.id)
     )
