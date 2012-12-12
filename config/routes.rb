@@ -1,5 +1,9 @@
 Angularjs2::Application.routes.draw do
-  resources :investors
+  resources :investors do
+    collection do
+      get 'angular'
+    end
+  end
 
   resources :houses
 
