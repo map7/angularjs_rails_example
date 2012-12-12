@@ -58,5 +58,6 @@ window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor) ->
       $location.path('/investors/' + t.id)
     )
 
-  $scope.reset = () ->
+  $scope.reset = ->
+    console.log 'reset'
     $scope.investor = angular.copy($scope.master)
