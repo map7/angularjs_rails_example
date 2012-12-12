@@ -12,8 +12,8 @@
       %td= investor.name
       %td= investor.total_cost
       %td= investor.total_value
-      %td= link_to 'Show', investor
-      %td= link_to 'Edit', edit_investor_path(investor)
+      %td= link_to 'Show', angular_investors_path + "#" + investor_path(investor)
+      %td= link_to 'Edit', angular_investors_path + "#" + edit_investor_path(investor)
       %td= link_to 'Destroy', investor, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Investor', new_investor_path
+= link_to 'New Investor', angular_investors_path + "#" + new_investor_path
