@@ -1,3 +1,11 @@
+* AngularJS Rails Example
+
 This is a demo of how to do complex forms with calculations and nested elements. I will shape this example to be a best of example. The proper way of doing AngularJS & Rails together.
 
 Rails should be passing JSON.
+
+This example is based on
+Rails 3.2.8
+CoffeeScript
+AngularJS
+angular resource
