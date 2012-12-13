@@ -1,15 +1,23 @@
+
+# Investor new form
 window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
   console.log('InvestorNewCtrl')
 
-  $scope.investor = {}
+  # Create a public investor hash
+  $scope.investor = {} 
 
+  # Create a public create function
   $scope.create = (investor) ->
     console.log 'enter create function'
+
+    # Create a new investors object 
     i = new Investors(investor)
     i.$create( (investor) ->
       $location.path('/investors/' + investor.id)
     )
-    
+
+  # Loading houses information
+  # Later we will get this from the server via JSON.    
   $scope.houses = [
     cost: "395000"
     value: "450000"
@@ -18,6 +26,7 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
     value: "620000"
   ]
 
+  # Calculation method
   $scope.calc_totals = ->
     # Initialise variables
     cost = 0
@@ -36,15 +45,17 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
   $scope.calc_totals()
   
 
-
-
+# Show Investor
 window.InvestorCtrl = ($scope, $routeParams, Investor) ->
   console.log 'InvestorCtrl'
   investor_id = $routeParams.investor_id
   $scope.investor = Investor.show({investor_id: investor_id})
 
+# Edit Investor
 window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor) ->
   console.log 'InvestorEditCtrl'
+
+  
   $scope.master = {}
   investor_id = $routeParams.investor_id
 
