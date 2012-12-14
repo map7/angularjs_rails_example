@@ -9,3 +9,7 @@ Rails 3.2.8
 CoffeeScript
 AngularJS
 angular resource
+
+** Resources
+
+http://vxtindia.com/blog/8-tips-for-angular-js-beginners/
