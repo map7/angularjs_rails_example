@@ -33,7 +33,7 @@ class InvestorsController < ApplicationController
   # GET /investors/new.json
   def new
     @investor = Investor.new(name: 'test')
-    3.times { @investor.houses.build }
+    3.times { @investor.houses.build({address: "Address"}) }
 
     respond_to do |format|
       format.html # new.html.erb
