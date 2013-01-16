@@ -18,6 +18,11 @@
         create: {method: 'POST'}
       })
     )
+    .factory('Investors', ($resource) ->  
+      return $resource('/investors/new.json', {}, {
+        new: {method: 'GET', isArray: false}
+      })
+    )
     .factory('Investor', ($resource) ->
       return $resource('/investors/:investor_id.json', {}, {
         show: {method: 'GET'},
