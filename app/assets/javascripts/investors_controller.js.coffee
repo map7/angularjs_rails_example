@@ -3,15 +3,18 @@
 window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
   console.log('InvestorNewCtrl')
 
-  # Create a public investor hash
-  $scope.investor = {} 
+  # Setup the defaults, eg:
+  $scope.investor = {houses_attributes: [
+    {address: '5 King Street', suburb: "Melbourne", postcode: "3000"},
+    {address: '60 William Street', suburb: "Melbourne", postcode: "3000"}
+  ]} 
 
   # Get the investor information & assign it to the scope
   console.log 'Get JSON'
 
-  $scope.investor = new Investors.new((resource) ->
-    $scope.master = angular.copy(resource)
-  )
+  # $scope.investor = new Investors.new((resource) ->
+  #   $scope.master = angular.copy(resource)
+  # )
 
   # Create a public create function
   $scope.create = (investor) ->
