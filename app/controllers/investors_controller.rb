@@ -34,10 +34,10 @@ class InvestorsController < ApplicationController
   def new
     @investor = Investor.new(name: 'test')
     3.times { @investor.houses.build }
-    
+
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @investor }
+      format.json { render json: @investor.to_json(include: :houses) }
     end
   end
 
