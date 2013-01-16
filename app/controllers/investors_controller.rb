@@ -32,7 +32,7 @@ class InvestorsController < ApplicationController
   # GET /investors/new
   # GET /investors/new.json
   def new
-    @investor = Investor.new
+    @investor = Investor.new(name: 'test')
     3.times { @investor.houses.build }
     
     respond_to do |format|

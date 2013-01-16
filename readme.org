@@ -5,7 +5,7 @@ This is a demo of how to do complex forms with calculations and nested elements.
 Rails should be passing JSON.
 
 This example is based on
-Rails 3.2.8
+Rails 3.2.11
 CoffeeScript
 AngularJS
 angular resource
