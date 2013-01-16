@@ -55,11 +55,12 @@ window.InvestorCtrl = ($scope, $routeParams, Investor) ->
 window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor) ->
   console.log 'InvestorEditCtrl'
 
-  
   $scope.master = {}
   investor_id = $routeParams.investor_id
 
-  $scope.investor = new Investor.show({investor_id: investor_id}, (resource) ->
+  # Get the investor information & assign it to the scope
+  console.log 'Get JSON'
+  $scope.investor = new Investor.edit({investor_id: investor_id}, (resource) ->
     $scope.master = angular.copy(resource)
   )
 
@@ -69,6 +70,8 @@ window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor) ->
       $location.path('/investors/' + t.id)
     )
 
+
   $scope.reset = ->
     console.log 'reset'
     $scope.investor = angular.copy($scope.master)
+  
