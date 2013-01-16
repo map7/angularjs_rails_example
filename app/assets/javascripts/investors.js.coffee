@@ -26,8 +26,12 @@
     .factory('Investor', ($resource) ->
       return $resource('/investors/:investor_id.json', {}, {
         show: {method: 'GET'},
-        edit: {method: 'GET'},    
         update: {method: 'PUT'}
+      })
+    )
+    .factory('Investor', ($resource) ->
+      return $resource('/investors/:investor_id/edit.json', {}, {
+        edit: {method: 'GET'}
       })
     )
 
