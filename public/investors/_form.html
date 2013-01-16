@@ -3,6 +3,26 @@
   <input id="investor_name" name="investor[name]" size="30" type="text" ng-model="investor.name" />
 </div>
 
+<li ng-repeat="house in investor.houses">
+  <p class="house">
+	House {{$index + 1}}<br />
+	<label for="house_address">Address</label>
+	<input id="house_address" name="house[address]" size="20" type="text" ng-model="house.address" />
+
+	<label for="house_suburb">Suburb</label>
+	<input id="house_suburb" name="house[suburb]" size="10" type="text" ng-model="house.suburb" />
+
+	<label for="house_postcode">Postcode</label>
+	<input id="house_postcode" name="house[postcode]" size="4" type="text" ng-model="house.postcode" />
+
+	<label for="house_cost">Cost</label>
+	<input id="house_cost" name="house[cost]" size="10" type="text" ng-model="house.cost" />
+
+	<label for="house_value">Value</label>
+	<input id="house_value" name="house[value]" size="10" type="text" ng-model="house.value" />
+  </p>
+</li>
+
 <div class="field">
   <label for="investor_total_cost">Total Cost</label><br />
   <input id="investor_total_cost" total_cost="investor[total_cost]" size="30" type="text" ng-model="investor.total_cost" />
@@ -12,3 +32,4 @@
   <label for="investor_total_value">Total Value</label><br />
   <input id="investor_total_value" total_value="investor[total_value]" size="30" type="text" ng-model="investor.total_value" />
 </div>
+

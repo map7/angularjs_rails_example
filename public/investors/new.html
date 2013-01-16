@@ -1,6 +1,10 @@
 <h1>New Investor</h1>
 
+I have {{investor.houses.length}} investments
+
 <form novalidate>
+
   <div ng-include src="'_form.html'"></div>
+
   <button ng-click='create(investor)'>Create Investor</button>
 </form>
