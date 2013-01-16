@@ -16,3 +16,6 @@ Tutorial http://vxtindia.com/blog/8-tips-for-angular-js-beginners/
 
 AngularJS with Rails nested forms
 http://tatey.com/2013/01/13/adding-and-removing-children-with-rails-nested-forms-and-angularjs/
+
+Add/Delete nested elements
+http://jacobmumm.com/2011/08/25/angular-js-nested-repeatable-example/
