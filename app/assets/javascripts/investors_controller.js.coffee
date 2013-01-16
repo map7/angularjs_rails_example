@@ -45,8 +45,9 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
 
     # Go through each house and calculate the total cost
     for h in $scope.investor.houses_attributes
-      cost = parseInt(cost) + parseInt(h.cost)
-      value = parseInt(value) + parseInt(h.value)
+      # The cost || 0 syntax checks if cost is a NaN and will convert it to a number
+      cost = parseInt(cost || 0) + parseInt(h.cost || 0)
+      value = parseInt(value || 0) + parseInt(h.value || 0)
 
     # Set the total
     $scope.investor.total_cost = cost
