@@ -38,17 +38,18 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
 
   # Calculation method
   $scope.calc_totals = ->
+    console.log "calc_totals"
     # Initialise variables
     cost = 0
     value = 0
 
     # Go through each house and calculate the total cost
-    for h in $scope.houses
+    for h in $scope.investor.houses_attributes
       cost = parseInt(cost) + parseInt(h.cost)
       value = parseInt(value) + parseInt(h.value)
 
     # Set the total
-    $scope.total_cost = cost
+    $scope.investor.total_cost = cost
     $scope.total_value = value  
 
   # Run the calculation at the start  

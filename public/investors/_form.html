@@ -16,7 +16,7 @@
 	<input id="house_postcode" name="house[postcode]" size="4" type="text" ng-model="house.postcode" />
 
 	<label for="house_cost">Cost</label>
-	<input id="house_cost" name="house[cost]" size="10" type="text" ng-model="house.cost" />
+	<input id="house_cost" name="house[cost]" size="10" type="text" ng-model="house.cost" ng-change="calc_totals()" />
 
 	<label for="house_value">Value</label>
 	<input id="house_value" name="house[value]" size="10" type="text" ng-model="house.value" />
