@@ -23,10 +23,9 @@ class InvestorsController < ApplicationController
   def show
     @investor = Investor.find(params[:id])
 
-
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @investor.to_json(include: :houses) }
+      format.json {render json: @investor}
     end
   end
 
@@ -45,11 +44,6 @@ class InvestorsController < ApplicationController
   # GET /investors/1/edit
   def edit
     @investor = Investor.find(params[:id])
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json {render json: @investor}
-    end
   end
 
   # POST /investors

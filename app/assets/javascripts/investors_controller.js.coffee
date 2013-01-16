@@ -67,7 +67,7 @@ window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor) ->
 
   # Get the investor information & assign it to the scope
   console.log 'Get JSON'
-  $scope.investor = new Investor.edit({investor_id: investor_id}, (resource) ->
+  $scope.investor = new Investor.show({investor_id: investor_id}, (resource) ->
     $scope.master = angular.copy(resource)
   )
 

@@ -12,6 +12,7 @@
     ])
 
   angular.module('investorService', ['ngResource'])
+    # NOTE: Each factory name must be unique
     .factory('Investors', ($resource) ->
       return $resource('/investors.json', {}, {
         index: {method: 'GET', isArray: true},
@@ -29,11 +30,7 @@
         update: {method: 'PUT'}
       })
     )
-    .factory('Investor', ($resource) ->
-      return $resource('/investors/:investor_id/edit.json', {}, {
-        edit: {method: 'GET'}
-      })
-    )
+
 
   angular.bootstrap document, ['investor']  
         
