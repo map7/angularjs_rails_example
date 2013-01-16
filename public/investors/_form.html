@@ -3,7 +3,7 @@
   <input id="investor_name" name="investor[name]" size="30" type="text" ng-model="investor.name" />
 </div>
 
-<li ng-repeat="house in investor.houses">
+<li ng-repeat="house in investor.houses_attributes">
   <p class="house">
 	House {{$index + 1}}<br />
 	<label for="house_address">Address</label>

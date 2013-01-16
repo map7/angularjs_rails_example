@@ -48,7 +48,7 @@ class InvestorsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @investor.to_json(include: :houses) }
+      format.json {render json: @investor}
     end
   end
 
