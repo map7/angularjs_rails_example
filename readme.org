@@ -12,4 +12,7 @@ angular resource
 
 ** Resources
 
-http://vxtindia.com/blog/8-tips-for-angular-js-beginners/
+Tutorial http://vxtindia.com/blog/8-tips-for-angular-js-beginners/
+
+AngularJS with Rails nested forms
+http://tatey.com/2013/01/13/adding-and-removing-children-with-rails-nested-forms-and-angularjs/
