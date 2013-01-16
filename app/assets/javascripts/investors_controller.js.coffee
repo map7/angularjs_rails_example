@@ -51,7 +51,7 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
 
     # Set the total
     $scope.investor.total_cost = cost
-    $scope.total_value = value  
+    $scope.investor.total_value = value  
 
   # Run the calculation at the start  
   $scope.calc_totals()
