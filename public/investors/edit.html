@@ -1,9 +1,9 @@
 <h1>Edit Investor</h1>
 
-<form novalidate>
+<form ng-submit="update(investor)">
   <div ng-include src="'_form.html'"></div>
 
-  <button ng-click='update(investor)'>Update Investor</button>
+  <input type="submit" value="Update Investor">
   <button ng-click='reset()'>RESET</button>
 </form>
 
