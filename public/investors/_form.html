@@ -16,18 +16,18 @@
 	<input id="house_postcode" name="house[postcode]" size="4" type="text" ng-model="house.postcode" />
 
 	<label for="house_cost">Cost</label>
-	<input id="house_cost" name="house[cost]" size="10" type="text" ng-model="house.cost" ng-change="sum.total(investor)" required />
+	<input id="house_cost" name="house[cost]" size="10" type="text" ng-model="house.cost" ng-change="common.total(investor)" required />
 
 	<label for="house_value">Value</label>
-	<input id="house_value" name="house[value]" size="10" type="text" ng-model="house.value" ng-change="sum.total(investor)" required />
+	<input id="house_value" name="house[value]" size="10" type="text" ng-model="house.value" ng-change="common.total(investor)" required />
 
 	<input type="hidden" id="_destroy" name="house[_destroy]" ng-model="house._destroy" />
 
 	<!-- Remove a house -->
-	<a ng-click="house._destroy = '1'">Remove House {{$index + 1}}</a>
+	<a ng-click="common.destroy_house(investor, house)">Remove House {{$index + 1}}</a>
   </p>
 
-  <a ng-click="house._destroy = '0'" ng-show="house._destroy == '1'">Restore House {{$index + 1}}</a>
+  <a ng-click="common.restore_house(investor, house)" ng-show="house._destroy == '1'">Restore House {{$index + 1}}</a>
 </li>
 
 <!-- Add a house -->

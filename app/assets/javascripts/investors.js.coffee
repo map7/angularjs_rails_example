@@ -25,24 +25,35 @@
         update: {method: 'PUT'}
       })
     )
-    .factory('Sum', ($window) ->
+    .factory('Common', ($window) ->
       return {
         total : (investor) ->
-          console.log "calc_totals"
+          console.log "total"
           # Initialise variables
           cost = 0
           value = 0
 
           # Go through each house and calculate the total cost
           for h in investor.houses_attributes
-            # The cost || 0 syntax checks if cost is a NaN and will convert it to a number
-            cost = parseInt(cost || 0) + parseInt(h.cost || 0)
-            value = parseInt(value || 0) + parseInt(h.value || 0)
+            if(h._destroy != "1")
+              # The cost || 0 syntax checks if cost is a NaN and will convert it to a number
+              cost = parseInt(cost || 0) + parseInt(h.cost || 0)
+              value = parseInt(value || 0) + parseInt(h.value || 0)
 
           # Set the total
           investor.total_cost = cost
-          investor.total_value = value           
-      }
+          investor.total_value = value
+    
+        destroy_house : (investor, house) ->
+          console.log "destroy_house"
+          house._destroy = '1'
+          this.total(investor)
+
+        restore_house : (investor, house) ->
+          console.log "restore_house"
+          house._destroy = '0'
+          this.total(investor)
+        }
     )
  
   

@@ -1,10 +1,10 @@
 
 # Investor new form
-window.InvestorNewCtrl = ($scope, $location, Investors, Investor, Sum) ->
+window.InvestorNewCtrl = ($scope, $location, Investors, Investor, Common) ->
   console.log('InvestorNewCtrl')
 
   # Setup variable for common services(factory)
-  $scope.sum = Sum
+  $scope.common = Common
 
   # Setup the defaults, eg:
   $scope.investor = {houses_attributes: [
@@ -46,11 +46,11 @@ window.InvestorCtrl = ($scope, $routeParams, Investor) ->
   $scope.investor = Investor.show({investor_id: investor_id})
 
 # Edit Investor
-window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor, Sum) ->
+window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor, Common) ->
   console.log 'InvestorEditCtrl'
 
   # Setup variable for common services(factory)
-  $scope.sum = Sum
+  $scope.common = Common
 
   $scope.master = {}
   investor_id = $routeParams.investor_id
@@ -60,7 +60,7 @@ window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor, Sum) ->
   $scope.investor = new Investor.show({investor_id: investor_id}, (resource) ->
     # copy the response from server to the scopes master
     $scope.master = angular.copy(resource)
-    $scope.sum.total($scope.investor) # Sum of totals
+    $scope.common.total($scope.investor) # Sum of totals
   )
     
   $scope.update = (investor) ->
