@@ -24,14 +24,14 @@
 	<input type="hidden" id="_destroy" name="house[_destroy]" ng-model="house._destroy" />
 
 	<!-- Remove a house -->
-	<button ng-click="house._destroy = '1'">Remove House {{$index + 1}}</button>
+	<a ng-click="house._destroy = '1'">Remove House {{$index + 1}}</a>
   </p>
 
-  <button ng-click="house._destroy = '0'" ng-show="house._destroy == '1'">Restore House {{$index + 1}}</button>
+  <a ng-click="house._destroy = '0'" ng-show="house._destroy == '1'">Restore House {{$index + 1}}</a>
 </li>
 
 <!-- Add a house -->
-<button ng-click="investor.houses_attributes.push({})">Add House</button>
+<a ng-click="investor.houses_attributes.push({})">Add House</a>
 
 <div class="field">
   <label for="investor_total_cost">Total Cost</label><br />
