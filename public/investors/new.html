@@ -2,10 +2,9 @@
 
 I have {{investor.houses_attributes.length}} investments
 
-<form ng-submit="update(investor)">
+<form ng-submit="create(investor)">
 
   <div ng-include src="'_form.html'"></div>
   
   <input type="submit" value="Create Investor">
-  <button ng-click='create(investor)'>Create Investor</button>
 </form>
