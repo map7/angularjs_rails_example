@@ -39,27 +39,6 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor, Sum) ->
     value: "620000"
   ]
 
-  # # Calculation method
-  # $scope.calc_totals = ->
-  #   console.log "calc_totals"
-  #   # Initialise variables
-  #   cost = 0
-  #   value = 0
-
-  #   # Go through each house and calculate the total cost
-  #   for h in $scope.investor.houses_attributes
-  #     # The cost || 0 syntax checks if cost is a NaN and will convert it to a number
-  #     cost = parseInt(cost || 0) + parseInt(h.cost || 0)
-  #     value = parseInt(value || 0) + parseInt(h.value || 0)
-
-  #   # Set the total
-  #   $scope.investor.total_cost = cost
-  #   $scope.investor.total_value = value  
-
-  # Run the calculation at the start  
-  # $scope.calc_totals()
-  
-
 # Show Investor
 window.InvestorCtrl = ($scope, $routeParams, Investor) ->
   console.log 'InvestorCtrl'
