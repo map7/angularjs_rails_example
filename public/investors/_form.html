@@ -20,10 +20,12 @@
 
 	<label for="house_value">Value</label>
 	<input id="house_value" name="house[value]" size="10" type="text" ng-model="house.value" ng-change="calc_totals()" />
+
+	<input type="text" id="_destroy" name="house[_destroy]" ng-model="house._destroy" />
   </p>
 
   <!-- Remove a house -->
-  <button ng-click="investor.houses_attributes.pop(house)">Remove House {{$index + 1}}</button>
+  <button ng-click="house._destroy = '1'">Remove House {{$index + 1}}</button>
 </li>
 
 <!-- Add a house -->
