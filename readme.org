@@ -9,6 +9,15 @@ Rails 3.2.11
 CoffeeScript
 AngularJS
 angular resource
+** Issues
+*** Readline support
+
+If you get the error 'uninitialized constant Debugger::LocalInterface::Readline' then you have to do the following;
+
+Install libreadline-dev first before running ruby-build
+
+    Ubuntu: sudo apt-get install libreadline-dev
+    Fedora: yum install readline-devel
 
 ** Resources
 
