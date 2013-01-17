@@ -4,7 +4,7 @@
 </div>
 
 <li ng-repeat="house in investor.houses_attributes">
-  <p class="house">
+  <p class="house" ng-hide="house._destroy == 1">
 	House {{$index + 1}}<br />
 	<label for="house_address">Address</label>
 	<input id="house_address" name="house[address]" size="20" type="text" ng-model="house.address" />
@@ -21,11 +21,13 @@
 	<label for="house_value">Value</label>
 	<input id="house_value" name="house[value]" size="10" type="text" ng-model="house.value" ng-change="calc_totals()" />
 
-	<input type="text" id="_destroy" name="house[_destroy]" ng-model="house._destroy" />
+	<input type="hidden" id="_destroy" name="house[_destroy]" ng-model="house._destroy" />
+
+	<!-- Remove a house -->
+	<button ng-click="house._destroy = '1'">Remove House {{$index + 1}}</button>
   </p>
 
-  <!-- Remove a house -->
-  <button ng-click="house._destroy = '1'">Remove House {{$index + 1}}</button>
+
 </li>
 
 <!-- Add a house -->
