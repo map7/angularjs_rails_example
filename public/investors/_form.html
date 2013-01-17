@@ -27,7 +27,7 @@
 	<button ng-click="house._destroy = '1'">Remove House {{$index + 1}}</button>
   </p>
 
-
+  <button ng-click="house._destroy = '0'" ng-show="house._destroy == '1'">Restore House {{$index + 1}}</button>
 </li>
 
 <!-- Add a house -->
