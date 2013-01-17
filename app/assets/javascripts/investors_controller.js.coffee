@@ -1,7 +1,10 @@
 
 # Investor new form
-window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
+window.InvestorNewCtrl = ($scope, $location, Investors, Investor, Sum) ->
   console.log('InvestorNewCtrl')
+
+  # Setup variable for common services(factory)
+  $scope.sum = Sum
 
   # Setup the defaults, eg:
   $scope.investor = {houses_attributes: [
@@ -36,25 +39,25 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor) ->
     value: "620000"
   ]
 
-  # Calculation method
-  $scope.calc_totals = ->
-    console.log "calc_totals"
-    # Initialise variables
-    cost = 0
-    value = 0
+  # # Calculation method
+  # $scope.calc_totals = ->
+  #   console.log "calc_totals"
+  #   # Initialise variables
+  #   cost = 0
+  #   value = 0
 
-    # Go through each house and calculate the total cost
-    for h in $scope.investor.houses_attributes
-      # The cost || 0 syntax checks if cost is a NaN and will convert it to a number
-      cost = parseInt(cost || 0) + parseInt(h.cost || 0)
-      value = parseInt(value || 0) + parseInt(h.value || 0)
+  #   # Go through each house and calculate the total cost
+  #   for h in $scope.investor.houses_attributes
+  #     # The cost || 0 syntax checks if cost is a NaN and will convert it to a number
+  #     cost = parseInt(cost || 0) + parseInt(h.cost || 0)
+  #     value = parseInt(value || 0) + parseInt(h.value || 0)
 
-    # Set the total
-    $scope.investor.total_cost = cost
-    $scope.investor.total_value = value  
+  #   # Set the total
+  #   $scope.investor.total_cost = cost
+  #   $scope.investor.total_value = value  
 
   # Run the calculation at the start  
-  $scope.calc_totals()
+  # $scope.calc_totals()
   
 
 # Show Investor
@@ -64,8 +67,11 @@ window.InvestorCtrl = ($scope, $routeParams, Investor) ->
   $scope.investor = Investor.show({investor_id: investor_id})
 
 # Edit Investor
-window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor) ->
+window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor, Sum) ->
   console.log 'InvestorEditCtrl'
+
+  # Setup variable for common services(factory)
+  $scope.sum = Sum
 
   $scope.master = {}
   investor_id = $routeParams.investor_id
@@ -73,9 +79,11 @@ window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor) ->
   # Get the investor information & assign it to the scope
   console.log 'Get JSON'
   $scope.investor = new Investor.show({investor_id: investor_id}, (resource) ->
+    # copy the response from server to the scopes master
     $scope.master = angular.copy(resource)
+    $scope.sum.total($scope.investor) # Sum of totals
   )
-
+    
   $scope.update = (investor) ->
     $scope.master = angular.copy(investor)
     investor.$update({investor_id: investor_id}, (t) ->

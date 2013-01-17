@@ -19,3 +19,6 @@ http://tatey.com/2013/01/13/adding-and-removing-children-with-rails-nested-forms
 
 Add/Delete nested elements
 http://jacobmumm.com/2011/08/25/angular-js-nested-repeatable-example/
+
+Common code
+http://stackoverflow.com/questions/11324202/angularjs-common-controller-functions
