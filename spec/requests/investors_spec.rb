@@ -4,8 +4,8 @@ describe "Investors" do
   describe "GET /investors" do
     it "displays investors" do
       Investor.create!(name: "Joseph Tramontana")
-      get investors_path
-      response.body.should include("Joseph Tramontana")
+      visit investors_path
+      page.should have_content("Joseph Tramontana")
     end
   end
 end
