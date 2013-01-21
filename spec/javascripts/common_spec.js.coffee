@@ -1,4 +1,6 @@
 describe "foo", ->
   it "returns 100", ->
-    common = new Common
-    expect(common.foo()).toBe("100")
+    $injector = angular.injector(['investorService'])
+    commonService = $injector.get('Common')
+    expect(commonService.foo()).toBe("100")
+
