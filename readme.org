@@ -31,3 +31,11 @@ http://jacobmumm.com/2011/08/25/angular-js-nested-repeatable-example/
 
 Common code
 http://stackoverflow.com/questions/11324202/angularjs-common-controller-functions
+** Tests
+
+Running integration tests through PhantomJS
+: rake spec:requests
+
+Running unit tests through jasmine
+: rails s
+Start browser and go to http://localhost:3000/jasmine

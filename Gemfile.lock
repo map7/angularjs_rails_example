@@ -73,6 +73,9 @@ GEM
     hike (1.2.1)
     http_parser.rb (0.5.3)
     i18n (0.6.1)
+    jasminerice (0.0.10)
+      coffee-rails
+      haml
     journey (1.0.4)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
@@ -170,6 +173,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   haml-rails
+  jasminerice
   jquery-rails
   poltergeist
   rails (= 3.2.11)

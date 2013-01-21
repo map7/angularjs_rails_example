@@ -28,7 +28,6 @@
     .factory('Common', ($window) ->
       return {
         total : (investor) ->
-          console.log "total"
           # Initialise variables
           cost = 0
           value = 0
@@ -43,6 +42,7 @@
           # Set the total
           investor.total_cost = cost
           investor.total_value = value
+          console.log "total cost: #{cost}, total value: #{value}"
     
         destroy_house : (investor, house) ->
           console.log "destroy_house"
@@ -57,7 +57,11 @@
           console.log "restore_house"
           house._destroy = '0'
           this.total(investor)
+
+        foo : () ->
+          "100"
         }
+
     )
  
   

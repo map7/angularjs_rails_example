@@ -43,5 +43,6 @@ gem 'haml-rails'
 group :development, :test do
   gem 'rspec-rails', "~> 2.0"
   gem 'capybara'
+  gem 'jasminerice'
   gem 'poltergeist'
 end
