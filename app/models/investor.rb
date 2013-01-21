@@ -4,6 +4,8 @@ class Investor < ActiveRecord::Base
   has_many :houses
   accepts_nested_attributes_for :houses, allow_destroy: true
 
+  validates_presence_of :name
+  
   #
   # Override the as_json to allow updating of nested house attributes.
   # This changes the name from houses to houses_attributes in the json sent back and forth to the browser.
