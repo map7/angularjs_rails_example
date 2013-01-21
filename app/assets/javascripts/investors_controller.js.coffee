@@ -12,13 +12,6 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor, Common) ->
     {address: '60 William Street', suburb: "Melbourne", postcode: "3000"}
   ]} 
 
-  # Get the investor information & assign it to the scope
-  console.log 'Get JSON'
-
-  # $scope.investor = new Investors.new((resource) ->
-  #   $scope.master = angular.copy(resource)
-  # )
-
   # Create a public create function
   $scope.create = (investor) ->
     console.log 'enter create function'
