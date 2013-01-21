@@ -39,3 +39,8 @@ gem 'debugger'
 
 gem "angularjs-rails"
 gem 'haml-rails'
+
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+end
