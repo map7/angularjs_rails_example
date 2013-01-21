@@ -40,7 +40,8 @@ gem 'debugger'
 gem "angularjs-rails"
 gem 'haml-rails'
 
-group :test do
+group :development, :test do
+  gem 'rspec-rails', "~> 2.0"
   gem 'capybara'
   gem 'poltergeist'
 end
