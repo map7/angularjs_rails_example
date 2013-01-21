@@ -7,19 +7,19 @@
   <p class="house" ng-hide="house._destroy == 1">
 	House {{$index + 1}}<br />
 	<label for="house_address">Address</label>
-	<input id="house_address" name="house[address]" size="20" type="text" ng-model="house.address" />
+	<input class="house_{{$index + 1}}_address" name="house[address]" size="20" type="text" ng-model="house.address" />
 
 	<label for="house_suburb">Suburb</label>
-	<input id="house_suburb" name="house[suburb]" size="10" type="text" ng-model="house.suburb" />
+	<input class="house_{{$index + 1}}_suburb" name="house[suburb]" size="10" type="text" ng-model="house.suburb" />
 
 	<label for="house_postcode">Postcode</label>
-	<input id="house_postcode" name="house[postcode]" size="4" type="text" ng-model="house.postcode" />
+	<input class="house_{{$index + 1}}_postcode" name="house[postcode]" size="4" type="text" ng-model="house.postcode" />
 
 	<label for="house_cost">Cost</label>
-	<input id="house_cost" name="house[cost]" size="10" type="text" ng-model="house.cost" ng-change="common.total(investor)" required />
+	<input class="house_{{$index + 1}}_cost" name="house[cost]" size="10" type="text" ng-model="house.cost" ng-change="common.total(investor)" required />
 
 	<label for="house_value">Value</label>
-	<input id="house_value" name="house[value]" size="10" type="text" ng-model="house.value" ng-change="common.total(investor)" required />
+	<input class="house_{{$index + 1}}_value" name="house[value]" size="10" type="text" ng-model="house.value" ng-change="common.total(investor)" required />
 
 	<input type="hidden" id="_destroy" name="house[_destroy]" ng-model="house._destroy" />
 
