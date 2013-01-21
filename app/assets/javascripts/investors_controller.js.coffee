@@ -22,16 +22,6 @@ window.InvestorNewCtrl = ($scope, $location, Investors, Investor, Common) ->
       $location.path('/investors/' + investor.id)
     )
 
-  # Loading houses information
-  # Later we will get this from the server via JSON.    
-  $scope.houses = [
-    cost: "395000"
-    value: "450000"
-  ,
-    cost: "600000"
-    value: "620000"
-  ]
-
 # Show Investor
 window.InvestorCtrl = ($scope, $routeParams, Investor) ->
   console.log 'InvestorCtrl'
