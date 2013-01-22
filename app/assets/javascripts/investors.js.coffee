@@ -28,10 +28,6 @@
     .factory('Common', ($window) ->
       return {
         total : (investor) ->
-          # Initialise variables
-          cost = 0
-          value = 0
-
           # Go through each house and calculate the total cost
           for h in investor.houses_attributes
             if(h._destroy != "1")
@@ -42,7 +38,6 @@
           # Set the total
           investor.total_cost = cost
           investor.total_value = value
-          console.log "total cost: #{cost}, total value: #{value}"
     
         destroy_house : (investor, house) ->
           console.log "destroy_house"
