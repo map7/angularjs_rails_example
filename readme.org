@@ -31,6 +31,9 @@ http://jacobmumm.com/2011/08/25/angular-js-nested-repeatable-example/
 
 Common code
 http://stackoverflow.com/questions/11324202/angularjs-common-controller-functions
+
+AngularJS easy intro
+http://www.yearofmoo.com/2012/08/use-angularjs-to-power-your-web-application.html
 ** Tests
 
 Running integration tests through PhantomJS
