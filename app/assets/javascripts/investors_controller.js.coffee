@@ -42,7 +42,6 @@ window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor, Common) ->
   $scope.investor = new Investor.show({investor_id: investor_id}, (resource) ->
     # copy the response from server response (JSON format) to the scopes master
     $scope.master = angular.copy(resource)
-    $scope.common.total($scope.investor)   # Sum of totals
   )
 
   # Update the investor passing the JSON back to the server.    

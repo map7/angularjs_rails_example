@@ -1,4 +1,3 @@
-
   # Setup the module & route
   angular.module("investor", ['investorService'])
     .config(['$routeProvider', ($provider) ->
@@ -28,6 +27,7 @@
     .factory('Common', ($window) ->
       return {
         total : (investor) ->
+          console.log "total_cost #{investor.total_cost}, total_value #{investor.total_value}"    
           # Go through each house and calculate the total cost
           for h in investor.houses_attributes
             if(h._destroy != "1")
@@ -38,6 +38,7 @@
           # Set the total
           investor.total_cost = cost
           investor.total_value = value
+          console.log "cost #{cost}, value #{value}"
     
         destroy_house : (investor, house) ->
           console.log "destroy_house"
