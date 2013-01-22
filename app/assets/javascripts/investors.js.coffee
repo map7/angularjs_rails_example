@@ -53,7 +53,7 @@
 
         foo : () ->
           "100"
-        }
+      }
     ) 
   
   angular.bootstrap document, ['investor']  
