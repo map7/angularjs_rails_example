@@ -46,10 +46,8 @@
     
         destroy_house : (investor, house) ->
           console.log "destroy_house"
-          if(isNaN(house.cost))
-            house.cost = 0
-          if(isNaN(house.value))
-            house.value = 0
+          house.cost ||= 0
+          house.value ||= 0
           house._destroy = '1'
           this.total(investor)
 
