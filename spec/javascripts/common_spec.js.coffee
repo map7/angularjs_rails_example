@@ -9,6 +9,25 @@ describe "foo", ->
     expect(Common.foo()).toBe "100" 
   )
 
+describe "total", ->
+  beforeEach ->
+    @investor = {houses_attributes: [
+      {address: '5 King Street', suburb: "Melbourne", postcode: "3000", cost: 3, value: 4},
+      {address: '60 William Street', suburb: "Melbourne", postcode: "3000", cost: 2, value: 5}
+    ]}
+    @house = @investor['houses_attributes'][0]
+  
+  describe "when both houses have costs & values", ->
+    it "should total cost to 5", inject((Common) ->
+      Common.total(@investor)
+      expect(@investor['total_cost']).toBe 5
+    )
+
+    it "should total value to 9", inject((Common) ->
+      Common.total(@investor)
+      expect(@investor['total_value']).toBe 9
+    )
+  
 describe "destroy_house", ->
   beforeEach ->
     @investor = {houses_attributes: [
@@ -57,11 +76,6 @@ describe "destroy_house", ->
     beforeEach ->
       @house['cost'] = 3
 
-    it "should total 5", inject((Common) ->
-      Common.total(@investor)
-      expect(@investor['total_cost']).toBe 5
-    )
-
     it "updates total cost to 2", inject((Common) ->
       Common.destroy_house(@investor, @house)
       expect(@investor['total_cost']).toBe 2
@@ -75,7 +89,7 @@ describe "restore_house", ->
     ]}
     @house = @investor['houses_attributes'][0]
 
-  it "should total 5", inject((Common) ->
+  it "should total 2", inject((Common) ->
     Common.total(@investor)
     expect(@investor['total_cost']).toBe 2
   )
