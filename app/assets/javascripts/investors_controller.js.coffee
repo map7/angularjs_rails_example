@@ -42,11 +42,19 @@ window.InvestorEditCtrl = ($scope, $routeParams, $location, Investor, Common) ->
   $scope.investor = new Investor.show({investor_id: investor_id}, (resource) ->
     # copy the response from server response (JSON format) to the scopes master
     $scope.master = angular.copy(resource)
+
+    # Convert price_cents to dollars
+    $scope.investor.price_cents /= 100
   )
 
   # Update the investor passing the JSON back to the server.    
   $scope.update = (investor) ->
+  
+    # Convert price_cents to cents
+    investor.price_cents *= 100
+  
     $scope.master = angular.copy(investor)
+
     investor.$update({investor_id: investor_id}, (t) ->
       $location.path('/investors/' + t.id)
     )

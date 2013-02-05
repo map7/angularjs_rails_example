@@ -1,17 +1,18 @@
 %h1 Listing investors
 %table
-  %tr
-    %th Name
-    %th Total cost
-    %th Total value
+	%tr
+		%th Name
+		%th Total cost
+		%th Total value
 
-  - @investors.each do |investor|
-    %tr
-      %td= investor.name
-      %td= investor.total_cost
-      %td= investor.total_value
-      %td= link_to 'Show', angular_investors_path + "#" + investor_path(investor)
-      %td= link_to 'Edit', angular_investors_path + "#" + edit_investor_path(investor)
-      %td= link_to 'Destroy', investor, method: :delete, data: { confirm: 'Are you sure?' }
+	- @investors.each do |investor|
+		%tr
+			%td= investor.name
+			%td= investor.total_cost
+			%td= investor.total_value
+			%td= investor.price.format
+			%td= link_to 'Show', angular_investors_path + "#" + investor_path(investor)
+			%td= link_to 'Edit', angular_investors_path + "#" + edit_investor_path(investor)
+			%td= link_to 'Destroy', investor, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Investor', angular_investors_path + "#" + new_investor_path
