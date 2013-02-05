@@ -1,9 +1,11 @@
 class Investor < ActiveRecord::Base
-  attr_accessible :name, :total_cost, :total_value, :houses_attributes
+  attr_accessible :name, :total_cost, :total_value, :houses_attributes, :price_cents
 
   has_many :houses
   accepts_nested_attributes_for :houses, allow_destroy: true
 
+  monetize :price_cents
+  
   validates_presence_of :name
   
   #
