@@ -10,5 +10,10 @@
   {{investor.total_value}}
 </p>
 
+<p>
+  <b>Price (money-rails example)</b>
+  {{investor.price_cents / 100 | currency}}
+</p>
+
 <a href='/investors/angular#/investors/{{investor.id}}/edit'>Edit</a>
 <a href='/investors'>Back</a>

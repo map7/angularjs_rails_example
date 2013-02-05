@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022025450) do
+ActiveRecord::Schema.define(:version => 20130205010842) do
 
   create_table "houses", :force => true do |t|
     t.string   "address"
@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(:version => 20121022025450) do
     t.string   "name"
     t.integer  "total_cost"
     t.integer  "total_value"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.integer  "price_cents",    :default => 0,     :null => false
+    t.string   "price_currency", :default => "USD", :null => false
   end
 
 end

@@ -46,3 +46,5 @@ group :development, :test do
   gem 'jasminerice'
   gem 'poltergeist'
 end
+
+gem 'money-rails'
